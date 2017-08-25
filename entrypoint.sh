@@ -12,7 +12,7 @@ if [ -d $TARGET ]; then
     if [[ -f "/gpg/public.key" ]] && [[ "$GPG_ID" != "NONE" ]]; then
         gpg --import --armor /gpg/public.key
         ARCHIVENAME=$ARCHIVENAME.gpg.zip
-        gpg-zip -r $GPG_ID --gpg-args "--batch --trust-model always" -e -o $ARCHIVENAME $TARGET/*
+        gpg-zip -r $GPG_ID --gpg-args "-v --batch --trust-model always" -e -o $ARCHIVENAME $TARGET/*
         TARGET=$ARCHIVENAME
     else
         ARCHIVENAME=$ARCHIVENAME.tar.gz
