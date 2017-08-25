@@ -23,5 +23,6 @@ else
     exit 1
 fi
 mega-put $ARCHIVENAME
+rm -rf $ARCHIVENAME
 exec $@
 
