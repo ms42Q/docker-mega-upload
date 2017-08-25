@@ -10,7 +10,7 @@ fi
 if [ -d $TARGET ]; then
     ARCHIVENAME=$PREFIX$(echo _$(date --iso-8601)_$(date +%s))
     if [[ -f "/gpg/public.key" ]] && [[ "$GPG_ID" != "NONE" ]]; then
-        gpg --import --armor /gpg/private.key
+        gpg --import --armor /gpg/public.key
         ARCHIVENAME=$ARCHIVENAME.gpg.zip
         gpg-zip -r $GPG_ID --gpg-args "--batch --trust-model always" -e -o $ARCHIVENAME $TARGET/*
         TARGET=$ARCHIVENAME
