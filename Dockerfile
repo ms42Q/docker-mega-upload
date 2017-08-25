@@ -26,7 +26,7 @@ RUN git clone https://github.com/meganz/sdk.git && \
     make && \
     make install && \
     cd .. && \
-    rm -rd sdk
+    rm -rf sdk
 
 COPY entrypoint.sh entrypoint.sh
 
